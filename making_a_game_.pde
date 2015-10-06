@@ -16,5 +16,10 @@ fill(23, 8, 255);
 ellipse(x, 175, 50, 50);
 
 //creatre the appearance of moving by changing the x position
-x = x -5;
+x = x -10;
+
+// put the cactus back on the right edge from the left edge 
+if (x < -25){
+  x = 900;
+}
 }
