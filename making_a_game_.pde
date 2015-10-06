@@ -9,11 +9,12 @@ void setup() {
 //this function always runs 
 void draw(){
 // background clears each time the program loops
-background(255);
+background(255, 132, 8);
 
 //draw a cricle thats not moving at the bottom right
+fill(23, 8, 255);
 ellipse(x, 175, 50, 50);
 
 //creatre the appearance of moving by changing the x position
-x = x -1;
+x = x -5;
 }
