@@ -22,7 +22,7 @@ void setup() {
   dinoy = 170;
   dinos = 0;
   dinoa = 0;
-  gravity = 0.005;
+  gravity = 0.06;
   
   
 }
@@ -32,8 +32,8 @@ void draw() {
   background(255, 132, 8);
 
 text("dinoy is " +dinoy, 150, 25);
-text("dinoy is " +dinoy, 150, 50);
-text("dinoy is " +dinoy, 150, 75);
+text("dinos is " +dinos, 150, 50);
+text("dinoa is " +dinoa, 150, 75);
 
   //draw a cricle thats not moving at the bottom right
   fill(23, 8, 255);
@@ -84,7 +84,7 @@ if (dinoy > 170) {
 
   //Cloud
   fill( 255, 255, 255);
-  ellipse(500, 75, 100, 45);
+  ellipse(500, 75, 100, 45); 
   
   //cactus 
   
