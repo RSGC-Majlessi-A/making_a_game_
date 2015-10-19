@@ -1,6 +1,10 @@
 float x1;  //tracks horisontal position of first cactus. 
 float x2;
 float x3;
+float distance; // distance between dino and hurdle 
+float distance2; 
+float distance3;
+
 float a1; // this tracks acceleration for the first cactus. 
 float s1;
 
@@ -8,9 +12,9 @@ float dinoy;
 float dinos;
 float dinoa;
 float gravity;
-float distance; // distance between dino and hurdle 
-float distance2; 
-float distance3;
+
+
+
 float score;
 
 
@@ -46,7 +50,6 @@ text("distance is " + distance, 150, 100);
 float a = dinoy - 175;
 float b = 50 - x1;
 distance = sqrt( pow(a, 2) + pow( b, 2)  );
-
 //determine hits
 if (distance < (30 + 25) ){
   textSize(25);
@@ -73,6 +76,8 @@ if (distance3 < (30 + 25) ){
   text ("HIT", 100, 100);
 }
 
+
+
   //draw a cricle thats not moving at the bottom right
   fill(23, 8, 255);
   ellipse(x1, 175, 50, 50);
@@ -97,7 +102,7 @@ if (dinoy > 170) {
   dinoa = 0;
   dinos = 0; 
   dinoy = 170;
-  score = score + 10
+  score = score + 10;
 }
   //creatre the appearance of moving by changing the x position
   x1 = x1 + s1;
@@ -111,7 +116,7 @@ if (dinoy > 170) {
   if (x1 < -25) {
     x1 = 900;
     s1 = -1;
-    score = score + 10
+    score = score + 10;
   }
 
   if (x2 < -25) {
@@ -119,7 +124,7 @@ if (dinoy > 170) {
   }
   if (x3 < -25) {
     x3 = 1100;
-    score = score + 10
+    score = score + 10;
   }
   //aesthetics
 
