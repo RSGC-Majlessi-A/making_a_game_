@@ -5,17 +5,15 @@ float distance; // distance between dino and hurdle
 float distance2; 
 float distance3;
 
-float a1; // this tracks acceleration for the first cactus. 
-float s1;
+float a1; // this tracks acceleration for the cactii  
+float s1;// this tracks the speed for cactii 
 
-float dinoy;
-float dinos;
-float dinoa;
-float gravity;
+float dinoy; // this tracks the Y cordinate of the Dino 
+float dinos;// This tracks the dino speed
+float dinoa;// this the acceleration of the speed 
+float gravity;// this tracks the gravity for the whole game.
 
-
-
-float score;
+float score;// this tracks the score for the player. 
 
 
 
@@ -41,10 +39,11 @@ void draw() {
   // background clears each time the program loops
   background(255, 132, 8);
 
-text("dinoy is " +dinoy, 150, 25);
-text("dinos is " +dinos, 150, 50);
-text("dinoa is " +dinoa, 150, 75);
-text("distance is " + distance, 150, 100);
+//text("dinoy is " +dinoy, 150, 25);
+//text("dinos is " +dinos, 150, 50);
+//text("dinoa is " +dinoa, 150, 75);
+//text("distance is " + distance, 150, 100);
+text("Score" + score, 600, 50);
 
 //determine disance between objects
 float a = dinoy - 175;
@@ -108,7 +107,7 @@ if (dinoy > 170) {
   x1 = x1 + s1;
   s1 = s1 +a1;
 
-  // other cacti
+  // other cactii
   x2 = x2 -10;
   x3 = x3 -10;
 
