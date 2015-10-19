@@ -8,6 +8,10 @@ float dinoy;
 float dinos;
 float dinoa;
 float gravity;
+float distance; // distance between dino and hurdle 
+float distance2; 
+float distance3;
+
 
 //this function runs once only
 void setup() {
@@ -34,6 +38,38 @@ void draw() {
 text("dinoy is " +dinoy, 150, 25);
 text("dinos is " +dinos, 150, 50);
 text("dinoa is " +dinoa, 150, 75);
+text("distance is " + distance, 150, 100);
+
+//determine disance between objects
+float a = dinoy - 175;
+float b = 50 - x1;
+distance = sqrt( pow(a, 2) + pow( b, 2)  );
+
+//determine hits
+if (distance < (30 + 25) ){
+  textSize(25);
+  text ("HIT", 100, 100);
+}
+
+float c = dinoy - 175;  
+float d = 50 - x2;
+distance2 = sqrt( pow(c, 2) + pow( d, 2)  );
+
+//determine hits
+if (distance2 < (30 + 25) ){
+  textSize(25);
+  text ("HIT", 100, 100);
+}
+
+float e = dinoy - 175;
+float f = 50 - x3;
+distance3 = sqrt( pow(e, 2) + pow( f, 2)  );
+
+//determine hits
+if (distance3 < (30 + 25) ){
+  textSize(25);
+  text ("HIT", 100, 100);
+}
 
   //draw a cricle thats not moving at the bottom right
   fill(23, 8, 255);
@@ -87,9 +123,16 @@ if (dinoy > 170) {
   ellipse(500, 75, 100, 45); 
   
   //cactus 
+  fill(13, 75, 4);
+  rect(700, 100, 40, 100);
+  rect(675, 150, 62, 20);
+  rect(675, 152, 12, -54);
+  ellipse(720, 114, 40, 85);
+  
   
 }
 
 void keyPressed() {
   dinoa = -1;
+  if (dinoy > 170); 
 }
