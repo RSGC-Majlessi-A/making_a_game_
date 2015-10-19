@@ -11,6 +11,8 @@ float gravity;
 float distance; // distance between dino and hurdle 
 float distance2; 
 float distance3;
+float score;
+
 
 
 //this function runs once only
@@ -95,6 +97,7 @@ if (dinoy > 170) {
   dinoa = 0;
   dinos = 0; 
   dinoy = 170;
+  score = score + 10
 }
   //creatre the appearance of moving by changing the x position
   x1 = x1 + s1;
@@ -108,6 +111,7 @@ if (dinoy > 170) {
   if (x1 < -25) {
     x1 = 900;
     s1 = -1;
+    score = score + 10
   }
 
   if (x2 < -25) {
@@ -115,6 +119,7 @@ if (dinoy > 170) {
   }
   if (x3 < -25) {
     x3 = 1100;
+    score = score + 10
   }
   //aesthetics
 
