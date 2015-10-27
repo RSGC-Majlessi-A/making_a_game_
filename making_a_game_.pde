@@ -15,7 +15,7 @@ float score;// this tracks the score for the player.
 
 //this function runs once only
 void setup() {
-  
+
   size(800, 200);
   noStroke();
 
@@ -29,7 +29,7 @@ void setup() {
 
 //this function always runs 
 void draw() {
-  
+
   // background clears each time the program loops
   background(255, 132, 8);
 
@@ -43,7 +43,7 @@ void draw() {
 
   //determine disance between objects
   float a = dinoy - 175;
-  float b = 50 - c1.x1;
+  float b = 50 - c1.getX();
   distance = sqrt( pow(a, 2) + pow( b, 2)  );
   //determine hits
   if (distance < (30 + 25) ) {
