@@ -27,12 +27,6 @@ void draw() {
   c1.update(gravity);
   d1.update (gravity); 
 
-  //text("dinoy is " +dinoy, 150, 25);
-  //text("dinos is " +dinos, 150, 50);
-  //text("dinoa is " +dinoa, 150, 75);
-  //text("distance is " + distance, 150, 100);
-  //text("Score" + score, 100, 50);
-
   ////determine disance between objects
   //float a = d1.dinoy - 175;
   //float b = 50 - c1.getX();
