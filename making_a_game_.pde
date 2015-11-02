@@ -13,7 +13,7 @@ void setup() {
   noStroke();
 
   c1 = new Cactus(900, -0.1, -10);
-  gravity = 0.06;
+  gravity = 0.075;
 
   d1 = new Dino(0, 170, 0);
 }
@@ -25,7 +25,7 @@ void draw() {
   background(255, 132, 8);
 
   c1.update(gravity);
-  d1.update (gravity); 
+  d1.update(gravity); 
 
   ////determine disance between objects
   //float a = d1.dinoy - 175;
@@ -57,4 +57,12 @@ void draw() {
   ellipse(720, 103, 40, 85);
   rect(758, 133, 12, -54);
   rect(737, 141, 33, -10);
+}
+
+
+void keyPressed() { 
+  println(d1.getY());
+  if (d1.getY() > 170  && d1.getY() < 171) {
+    d1.setA(-1);
+  }
 }

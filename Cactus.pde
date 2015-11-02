@@ -14,8 +14,8 @@ class Cactus {
     fill(23, 8, 255);
     ellipse(x1, 175, 50, 50);
 
-s1=s1+a1;
-x1=x1+s1;
+    s1=s1+a1;
+    x1=x1+s1;
 
 
     if (x1 < -25) {
