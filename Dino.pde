@@ -1,52 +1,53 @@
 class Dino {
-  float dinoy;
-  float dinoa; 
-  float dinos;
-  
-  Dino (float dinos_, float dinoy_, float dinoa_) {
+  //Global Variables for dino 
+  float dx;  //tracks horizontal position of dino
+  float dy;  //tracks vertical position of dino
+  float ds;  //tracks the speed of the dino
+  float da;  //tracks the acceleration of the dino
+  float dr;  //tracks radius of dinosaur
 
-    dinoy = dinoy_;
-    dinoa = dinoa_;
-    dinos = dinos_;
+  //constructor (like setup; runs once)
+  Dino(float dy_, float ds_, float da_) {
+    dx = 50;
+    dy = dy_;
+    ds = ds_;
+    da = da_;
+    dr = 30;
   }
 
-  //this is for updating and drawing the dino on sceen.
-  void update(float gravity) {
+  //update: draws things relating to the dino
+  void update(float g) {
 
-    //dino model 
-    fill(0);
-    ellipse(50, dinoy, 50, 50);
-
-    // stop the dino from falling
-    if (dinoy > 171 ) {
-      println("resetting position");
-     dinoa = 0;
-     dinos = 0; 
-     dinoy = 170;
+    //draw dino
+    fill(255, 30, 30);
+    ellipse(dx, dy, dr*2, dr*2);
+    
+    //move dino
+    da = da + g;   //change acceleration based on gravity
+    ds = ds + da;  //change speed based on acceleration
+    dy = dy + ds;  //change location based on speed
+    
+    //stop the dino if it hits the ground
+    if (dy > 170) { // bottom of the screen (200) minus the radius of (30)
+      dy = 170;
+      ds = 0;
+      da = 0;
     }
 
-    //move the dino
-    println(dinoa);
-    dinoa = dinoa + gravity;
-    dinos = dinos + dinoa;  //change speed based on acceleration
-    dinoy = dinoy + dinos;  //change location based on speed
-
-    //dinoy = 170;
-    //dinos = 0;
-    //dinoa = 0;
-
+    // status updates for dinosaur position
     textSize(12);
     fill(0);
-    text("dinoY is " + dinoy, 150, 25);
-    text("dinoS is " + dinos, 150, 50);
-    text("dinoA is " + dinoa, 150, 75);
+    text("dinoY is " + dy, 150, 25);
+    text("dinoS is " + ds, 150, 50);
+    text("dinoA is " + da, 150, 75);
+    // text("distance is " + distance, 150, 100); // will make this work later
   }
 
   // getY
   //
   // Purpose: an accessor method; lets us find out where the dino is (vertically)
   float getY() {
-    return dinoy;
+    return dy;
   }
 
   // setA
@@ -54,7 +55,29 @@ class Dino {
   // Purpose: a mutator method; lets the acceleration for the dinosaur be set
   //          from outside the class
   void setA(float newA_) {
-    dinoa = newA_;
-    println("just set new a");
+    da = newA_;
   }
+  
+  // isTouching
+  //
+  // Purpose: uses information about cactus position and determines if it is 
+  //          touching the dino
+  boolean isTouching(Cactus c) {
+
+    // determine distance between the objects
+    //        dino - cactus
+    float a = dy - c.getY();
+    float b = dx - c.getX();
+    distance = sqrt(a*a + b*b);
+
+    // decide whether dino is touching this cactus
+    //            dino radius   cactus radius
+    if ( distance < (dr   +     c.getR()*.75 ) ) {
+      return true;  // exit the method and say "yes" (is touching!) or "true"
+    }
+    
+    // when dino is not touching, say "no" (not touching) or "false"
+    return false;
+  }
+  
 }

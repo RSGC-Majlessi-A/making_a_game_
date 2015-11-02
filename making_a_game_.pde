@@ -61,8 +61,6 @@ void draw() {
 
 
 void keyPressed() { 
-  println(d1.getY());
-  if (d1.getY() > 170  && d1.getY() < 171) {
-    d1.setA(-1);
+  if (d1.getY() == 170)
+  d1.setA(-1);
   }
-}

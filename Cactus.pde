@@ -2,11 +2,14 @@ class Cactus {
   float x1;  //tracks horisontal position of first cactus. 
   float a1; // this tracks acceleration for the cactii  
   float s1;// this tracks the speed for cactii 
+  float y1; 
+  float r1;
 
   Cactus (float x_, float a_, float s_) {
     x1 = x_;
     a1 = a_;
     s1 = s_;
+    y1 = 170;
   }
 
   void update(float gravity) {
@@ -31,4 +34,16 @@ class Cactus {
 
     return x1;
   }
+  
+  //getY
+ 
+ float getY(){
+ 
+ return y1;
+ }
+ 
+ float getR(){
+   
+   return r1;
+ }
 }
