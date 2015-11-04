@@ -69,7 +69,7 @@ class Dino {
     float a = dy - c.getY();
     float b = dx - c.getX();
     distance = sqrt(a*a + b*b);
-
+ 
     // decide whether dino is touching this cactus
     //            dino radius   cactus radius
     if ( distance < (dr   +     c.getR()*.75 ) ) {

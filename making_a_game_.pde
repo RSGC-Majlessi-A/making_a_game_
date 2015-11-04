@@ -27,23 +27,12 @@ void draw() {
   c1.update(gravity);
   d1.update(gravity); 
 
-  ////determine disance between objects
-  //float a = d1.dinoy - 175;
-  //float b = 50 - c1.getX();
-  //distance = sqrt( pow(a, 2) + pow( b, 2)  );
-  ////determine hits
-  //if (distance < (30 + 25) ) {
-  //  textSize(25);
-  //  text ("HIT LOLOLOLOL BAD", 100, 100);
-  //}
-  //create the appearance of moving by changing the x position
-
 
   //aesthetics
 
   //sun
   fill(252, 214, 5);
-  ellipse(779, 0, 151, 151);
+  ellipse(779, 0, 151, 151); 
 
   //Cloud
   fill( 255, 255, 255);
