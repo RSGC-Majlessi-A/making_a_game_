@@ -4,6 +4,7 @@ class Cactus {
   float s1;// this tracks the speed for cactii 
   float y1; 
   float r1;
+  float score;
 
   Cactus (float x_, float a_, float s_) {
     x1 = x_;
@@ -19,14 +20,21 @@ class Cactus {
 
     s1=s1+a1;
     x1=x1+s1;
+    
+      textSize(12);
+   fill(0);
+   text("Score is " + score, 7, 14);
 
 
     if (x1 < -25) {
       x1 = 900;
       s1 = -10;
       score = score + 10;
+      
+      
     }
   }
+ 
 
   // getX
   // Purpose: to return the x position of the cactus
